@@ -37,6 +37,10 @@ class SystemUtils:
         return False
 
     @classmethod
+    def existCFile(cls, files):
+        return len(files.filter(lambda f: cls.get_postfix(f) in ['C', 'c', 'cc', 'cpp', 'c++'])) > 0
+
+    @classmethod
     def get_full_path(cls, relative_path):
         return os.path.join(os.getcwd(), relative_path)
 
